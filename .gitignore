@@ -72,7 +72,3 @@ GitHub.sublime-settings
 # Ignore all local history of files
 .history
 .ionide
-
-### Project ###
-package-lock.json
-yarn-lock.json
