@@ -1,0 +1,63 @@
+/*=============================================
+=            Font Colors                      =
+=============================================*/
+
+.font-color-normal {
+  color: $cg-font-color-normal;
+}
+
+.font-color-placeholder {
+  color: $cg-font-color-placeholder;
+}
+
+.font-color-dark {
+  color: $cg-font-color-dark;
+}
+
+/*=====       End of Font Colors     ======*/
+
+/*=============================================
+=            Font Types                       =
+=============================================*/
+
+.cg-font-h1 {
+  font-family: $cg-font-family-roboto;
+  font-style: $cg-font-style-normal;
+  font-weight: $cg-font-weight-h1;
+  font-size: $cg-font-size-h1;
+  line-height: $cg-font-line-height-h1;
+
+  @extend .font-color-normal;
+}
+
+.cg-font-h5 {
+  font-family: $cg-font-family-roboto;
+  font-style: $cg-font-style-normal;
+  font-weight: $cg-font-weight-h5;
+  font-size: $cg-font-size-h5;
+  line-height: $cg-font-line-height-h5;
+
+  @extend .font-color-normal;
+}
+
+.cg-font-body1 {
+  font-family: $cg-font-family-roboto;
+  font-style: $cg-font-style-normal;
+  font-weight: $cg-font-weight-body1;
+  font-size: $cg-font-size-body1;
+  line-height: $cg-font-line-height-body1;
+
+  @extend .font-color-normal;
+}
+
+.cg-font-search-input {
+  font-family: $cg-font-family-manrope;
+  font-style: $cg-font-style-normal;
+  font-weight: $cg-font-weight-body1;
+  font-size: $cg-font-size-body1;
+  line-height: $cg-font-line-height-body1;
+
+  @extend .font-color-placeholder;
+}
+
+/*=====       End of Font Types       ======*/

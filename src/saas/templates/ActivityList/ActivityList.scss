@@ -1,0 +1,13 @@
+.cg-activity-list-container {
+  display: block;
+}
+
+.cg-activity-list-card {
+  display: inline-flex;
+}
+
+.cg-activity-list-odd-card {
+  @include for-desktop {
+    margin-left: 1rem;
+  }
+}

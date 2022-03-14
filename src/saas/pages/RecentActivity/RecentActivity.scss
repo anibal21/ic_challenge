@@ -1,0 +1,19 @@
+.cg-header-spacing {
+  @include for-desktop {
+    margin-bottom: $cg-spacing-cmp-header-bottom-desktop;
+  }
+
+  @include for-mobile {
+    margin-bottom: $cg-spacing-cmp-header-bottom-mobile;
+  }
+}
+
+.cg-search-input-spacing {
+  @include for-desktop {
+    margin-bottom: $cg-spacing-cmp-search-input-bottom-desktop;
+  }
+
+  @include for-mobile {
+    margin-bottom: $cg-spacing-cmp-search-input-bottom-mobile;
+  }
+}

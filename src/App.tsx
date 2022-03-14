@@ -1,15 +1,19 @@
-import { useFakeQuery } from './data/fakeFetchClient';
+import React from 'react'
+import { useFakeQuery } from './hooks/useFakeQuery/useFakeQuery';
+import RecentActivity from './pages/RecentActivity/RecentActivity';
+import { useSelector } from 'react-redux'
+import { RootState } from './store/store';
 
 function App() {
+
+  const searchInput = useSelector((state: RootState) => state.recentActivity.searchInput)
+
   const { data, error, loading } = useFakeQuery('SelectCatPlayers', {
-    variables: { search: null },
+    variables: { search: searchInput },
   });
 
   return (
-    <div>
-      <h1>Players Latest Activities</h1>
-      <span>{loading ? 'Loading...' : 'Data is loaded'}</span>
-    </div>
+    <RecentActivity userList={data} loading={loading} />
   );
 }
 

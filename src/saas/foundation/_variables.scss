@@ -1,0 +1,201 @@
+/*=============================================
+=            Colors                           =
+=============================================*/
+
+/**
+ *
+ * Font colors
+ *
+ */
+
+$cg-font-color-normal: #000000;
+
+$cg-font-color-placeholder: #3a434d;
+
+$cg-font-color-dark: #ffffff;
+
+/**
+ *
+ * Classification Colors
+ *
+ */
+
+$cg-classification-color-red: #eb2323;
+
+$cg-classification-color-yellow: #f3c41e;
+
+$cg-classification-color-green: #00b32a;
+
+$cg-classification-color-blue: #4192dc;
+
+/**
+ *
+ * Background Colors
+ *
+ */
+
+$cg-background-color-body: #ffffff;
+
+$cg-background-color-card: #f5f5f5;
+
+/*=====  End of Section comment block  ======*/
+
+/*=============================================
+=            Fonts                            =
+=============================================*/
+
+/**
+ *
+ * Font family
+ *
+ */
+
+$cg-font-family-roboto: "Roboto";
+
+$cg-font-family-manrope: "Manrope";
+
+/**
+ *
+ * Font Style
+ *
+ */
+
+$cg-font-style-normal: "normal";
+
+/**
+ *
+ * Font Size
+ *
+ */
+
+$cg-font-size-h1: 2.25rem;
+
+$cg-font-size-h5: 1.25rem;
+
+$cg-font-size-body1: 1rem;
+
+/**
+ *
+ * Font Weight
+ *
+ */
+
+$cg-font-weight-h1: 400;
+
+$cg-font-weight-h5: 700;
+
+$cg-font-weight-body1: 400;
+
+/**
+ *
+ * Font Line-height
+ *
+ */
+
+$cg-font-line-height-h1: 2.625rem;
+
+$cg-font-line-height-h5: 1.438rem;
+
+$cg-font-line-height-body1: 1.188rem;
+
+/*=====  End of Fonts  ======*/
+
+/*=============================================
+=      Layouts and containers Measures        =
+=============================================*/
+
+/**
+ *
+ * Mixins
+ *
+ */
+
+$cg-mixins-for-desktop-min-width: 23.5rem;
+
+$cg-mixins-for-mobile-max-width: 23.438rem;
+
+/**
+ *
+ * Common Layout
+ *
+ */
+$cg-layout-common-full-width: 100%;
+
+/**
+ *
+ * Layout
+ *
+ */
+$cg-layout-max-width-desktop: 71rem;
+
+$cg-layout-max-width-mobile: 21.438rem;
+
+/**
+ *
+ * Card Image
+ *
+ */
+
+$cg-measure-card-image-width: 6.25rem;
+
+$cg-measure-card-image-height: 6.25rem;
+
+/*=====  End of Layouts and containers Measures  ======*/
+
+/**
+ *
+ * Card
+ *
+ */
+$cg-measure-card-for-desktop-height: 8.25rem;
+
+$cg-measure-card-for-mobile-height: 8.25rem;
+
+$cg-measure-card-for-desktop-max-width: 35rem;
+
+$cg-measure-card-for-mobile-max-width: 21.438rem;
+
+/*=============================================
+=                 Spacing                     =
+=============================================*/
+
+/**
+ *
+ * Spacing Component
+ *
+ */
+$cg-spacing-cmp-text-between-1: 0.5rem;
+
+$cg-spacing-cmp-header-bottom-desktop: 3rem;
+
+$cg-spacing-cmp-header-bottom-mobile: 1.5rem;
+
+$cg-spacing-cmp-search-input-bottom-desktop: 3rem;
+
+$cg-spacing-cmp-search-input-bottom-mobile: 1.5rem;
+
+/**
+ *
+ * Card
+ *
+ */
+
+$cg-spacing-card-item-mobile: 1rem;
+
+$cg-spacing-card-text-left-mobile: 2.063rem;
+
+$cg-spacing-card-item-desktop: 1rem;
+
+$cg-spacing-card-text-left-desktop: 1.063rem;
+
+$cg-spacing-card-badge-left-margin: 5.75rem;
+
+$cg-spacing-card-badge-right-margin: 1rem;
+
+$cg-spacing-card-card-detail-top-margin-desktop: 0.688rem;
+
+$cg-spacing-card-card-detail-top-margin-mobile: 0.688rem;
+
+$cg-spacing-card-bottom-margin: 1rem;
+
+/*=====         End of Spacing          ======*/

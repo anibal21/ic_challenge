@@ -1,0 +1,14 @@
+.cg-card-detail-container {
+  display: flex;
+  flex-direction: column;
+
+  @include for-desktop {
+  }
+
+  @include for-mobile {
+  }
+}
+
+.cg-card-detail-space-between-text {
+  height: $cg-spacing-cmp-text-between-1;
+}

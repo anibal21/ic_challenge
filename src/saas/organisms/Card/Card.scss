@@ -1,0 +1,48 @@
+.cg-card-container {
+  position: relative;
+  background-color: $cg-background-color-card;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: $cg-spacing-card-bottom-margin;
+
+  @include for-desktop {
+    width: $cg-measure-card-for-desktop-max-width;
+    height: $cg-measure-card-for-desktop-height;
+  }
+
+  @include for-mobile {
+    width: $cg-measure-card-for-mobile-max-width;
+    height: $cg-measure-card-for-mobile-height;
+  }
+}
+
+.cg-card-body-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: $cg-spacing-card-item-desktop;
+}
+
+.cg-card-spacing-card-detail {
+  @include for-desktop {
+    margin-top: $cg-spacing-card-card-detail-top-margin-desktop;
+    margin-left: $cg-spacing-card-text-left-desktop;
+  }
+
+  @include for-mobile {
+    margin-top: $cg-spacing-card-card-detail-top-margin-mobile;
+    margin-left: $cg-spacing-card-text-left-mobile;
+  }
+}
+
+.cg-card-badge-container {
+  position: absolute;
+
+  @include for-desktop {
+    right: $cg-spacing-card-badge-right-margin;
+  }
+
+  @include for-mobile {
+    left: $cg-spacing-card-badge-left-margin;
+  }
+}

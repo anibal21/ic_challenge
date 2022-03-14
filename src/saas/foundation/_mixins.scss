@@ -1,0 +1,11 @@
+@mixin for-desktop {
+  @media (min-width: $cg-mixins-for-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media (max-width: $cg-mixins-for-mobile-max-width) {
+    @content;
+  }
+}

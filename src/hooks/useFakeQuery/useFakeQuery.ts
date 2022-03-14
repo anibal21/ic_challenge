@@ -6,7 +6,7 @@
  */
 
 import { useEffect, useReducer } from 'react';
-import { players } from './fakeData';
+import { players } from './data/fakeData';
 import type { Player } from './types';
 
 type PlayerAsyncData = {

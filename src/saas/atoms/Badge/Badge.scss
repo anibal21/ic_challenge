@@ -1,0 +1,33 @@
+.cg-badge-container {
+  width: 3.125rem;
+  height: 3.125rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 1.563rem;
+  -webkit-border-radius: 1.563rem;
+  -moz-border-radius: 1.563rem;
+
+  color: $cg-font-color-dark;
+
+  @extend .cg-utils-text-center;
+  @extend .cg-fonts-common;
+}
+
+.cg-badge-container-text-red {
+  background-color: $cg-classification-color-red;
+}
+
+.cg-badge-container-text-yellow {
+  background-color: $cg-classification-color-yellow;
+}
+
+.cg-badge-container-text-green {
+  background-color: $cg-classification-color-green;
+}
+
+.cg-badge-container-text-blue {
+  background-color: $cg-classification-color-blue;
+}

@@ -1,0 +1,48 @@
+/*=============================================
+=            BaseApp Style                    =
+=============================================*/
+
+body {
+  width: $cg-layout-common-full-width;
+  margin: 0;
+}
+
+#root {
+  width: $cg-layout-common-full-width;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*=====      End of BaseApp Style      ======*/
+
+/*=============================================
+=            Fonts                            =
+=============================================*/
+
+.cg-fonts-common {
+  font-family: $cg-font-family-roboto;
+  font-style: $cg-font-style-normal;
+}
+
+.cg-fonts-select {
+  font-family: $cg-font-family-manrope;
+  font-style: $cg-font-style-normal;
+}
+
+/*=====  End of Fonts                 ======*/
+
+/*=============================================
+=            Utils                            =
+=============================================*/
+
+/**
+ *
+ * Center a text
+ *
+ */
+.cg-utils-text-center {
+  text-align: center;
+}
+
+/*=====         End of Utils          ======*/

@@ -1,0 +1,11 @@
+.cg-layout-container {
+  @include for-desktop {
+    width: $cg-layout-max-width-desktop;
+    margin-top: 60px;
+  }
+
+  @include for-mobile {
+    width: $cg-layout-max-width-mobile;
+    margin-top: 31px;
+  }
+}

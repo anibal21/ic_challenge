@@ -1,0 +1,12 @@
+.cg-search-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px;
+
+  border: 1px solid #c2c2c2;
+  box-sizing: border-box;
+
+  width: $cg-layout-common-full-width;
+  @extend .cg-font-search-input;
+}

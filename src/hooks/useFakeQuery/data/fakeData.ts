@@ -4,7 +4,7 @@
  * the Player[] type which is what {data} from useFakeQuery() return resolves too
  */
 
-import type { Player } from './types';
+import type { Player } from '../types';
 
 const playerNames = [
   'Zaydan Nicholson',

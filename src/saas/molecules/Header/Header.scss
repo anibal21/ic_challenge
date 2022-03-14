@@ -1,0 +1,7 @@
+.cg-header-container {
+  @include for-desktop {
+  }
+
+  @include for-mobile {
+  }
+}
