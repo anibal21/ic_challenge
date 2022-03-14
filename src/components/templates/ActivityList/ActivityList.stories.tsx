@@ -17,7 +17,7 @@ const Template: ComponentStory<typeof ActivityList> = (args) =>
 export const Common = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Common.args = {
-  loading: true,
+  loading: false,
   userActivityList: [
     {
       imageUrl: 'https://www.adoptapet.com/blog/uploads/2013/01/Mango-cat-collar.jpg',

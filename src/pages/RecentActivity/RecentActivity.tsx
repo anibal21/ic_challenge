@@ -54,7 +54,8 @@ const calculateLastActivity = (lastActivity: string, game: IGame) => {
     let lastActivityDate: Date = parse(lastActivity, "yyyy-MM-dd", new Date());
     let gameDate: Date = parse(game.date, "yyyy-MM-dd", new Date());
 
-    return lastActivityDate > gameDate ? parseDateToString(lastActivityDate, "yyyy-MM-dd") : parseDateToString(gameDate, "yyyy-MM-dd")
+    return lastActivityDate > gameDate ?
+        parseDateToString(lastActivityDate, "yyyy-MM-dd") : parseDateToString(gameDate, "yyyy-MM-dd")
 }
 
 const dataFromUserList = (fullName: string, games: ReadonlyArray<IGame>): IDataFromUserListResponse =>

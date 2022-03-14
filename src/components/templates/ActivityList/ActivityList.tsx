@@ -16,7 +16,7 @@ interface IActivityList {
 }
 
 const ActivityList: React.FC<IActivityList> = ({ userActivityList, loading }) =>
-    <div className='cg-activity-list-container'>
+    <div role={'activityList'} className='cg-activity-list-container'>
         {loading ?
             'Loading...'
             : userActivityList.map((userActivity: IUserActivity, index: number) =>

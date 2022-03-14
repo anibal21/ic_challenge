@@ -16,29 +16,23 @@ Display sorted player information as given in the design.
 https://www.figma.com/file/A3G8XiR3y3U2kApjY8MLXI/Cat-Game?node-id=0%3A1
 
 If figma didn't work for you, you can use this static mock instead.
-![Static Desktop View Mock](./desktop-view-mock.png?raw=true 'Static Desktop View Mock')
-![Static Mobile View Mock](./mobile-view-mock.png?raw=true 'Static Mobile View Mock')
+![Static Desktop View Mock](./desktop-view-mock.png?raw=true "Static Desktop View Mock")
+![Static Mobile View Mock](./mobile-view-mock.png?raw=true "Static Mobile View Mock")
 
 ## Detail of what needs to be done
 
 - The UI should be pixel perfect.
-
 - The player list should be sorted by their last played date. When determining players last played date, the game's `accurate date` should be preferred over games's `date` when available.
   (NOTE: For the player's games our (imaginary) backend can find `accurate date`, which is a more accurate date than the game's `date` field. So when ever `accurate date` is available for a game, use that over using game's `date` field.)
-
 - When user types in the search input, only apply the search after user has stopped typing for 400 milliseconds. The search should cause a new query request rather than filtering the previous players result locally. (Note: in this test, you can assume that passing the search input to useFakeQuery will make a new request)
-
 - Display the win rate badge with different background color based on their win ratio classification.
 
   - red: === 0
   - yellow: > 0 && < 0.25
   - green: >= 0.25 && < 0.75
   - blue: >= 0.75
-
 - The Card and the Badge should be components that can seamlessly be used by other features unrelated to cat games
-
 - When data is being fetched, display only a text, instead of the cat list, under the search bar, in the center of the page that says "Loading..."
-
 - Create automated tests that increase confidence for this feature. (Note: if there are tests or types of tests that you cannot write/create due to time constrain, please describe their type and what they test in code comments. Still, we would like to see some tests written.)
 
 ## Additional Note:
@@ -55,3 +49,19 @@ useFakeQuery('SelectPlayers', { variables: { search: null } });
 //Fetching list with search
 useFakeQuery('SelectPlayers', { variables: { search: 'some-search input 123' } });
 ```
+
+# Job Applicant Notes - Aníbal Rodríguez
+
+First of all, this is one of the best take home tests I've done. It looks simple, but all you can put and improve is important. There're things that I couldn't do because of time, but the project have almost all the things I always use. The things I could finish with more time are:
+
+1- Add all the atoms, molecules, etc to Storybook with good descriptions and a more interactive playground.
+
+2- Test all the features that the project had, like 400 ms response, screen responsiveness, etc.
+
+3- I would implement I18n.
+
+4- I would build more utilities methods to make my components more pure, stateless, small and more readable.
+
+5- I would implement environment variables for miliseconds response.
+
+6- I would implement redux-persist to continue working if page refresh.
