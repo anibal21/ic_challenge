@@ -5,12 +5,16 @@ import SearchInput from '../../components/molecules/SearchInput/SearchInput'
 import ActivityList from '../../components/templates/ActivityList/ActivityList'
 import Layout from '../../components/templates/Layout/Layout'
 import { IUserActivity } from './../../components/templates/ActivityList/ActivityList'
-import { parse, format } from 'date-fns'
 import { useDispatch } from 'react-redux'
 import { addSearchInput } from '../../store/reducers/recent_activity/RecentActivityReducer'
+import { parseDateToString, sortDatesDescCompare, stringToDate } from '../../utils/dates/base'
+import { jsonKeyExists } from '../../utils/json/base'
 
 
 interface IGame {
+    accurateDate?: {
+        date: string;
+    };
     date: string;
     location: string;
     otherPlayers: ReadonlyArray<string>
@@ -29,35 +33,43 @@ interface IRecentActivity {
     userList: ReadonlyArray<IUserList>
 }
 
-const i18n = {
-    header: 'Recent Activity'
-}
-
 interface IDataFromUserListResponse {
     ratio: number;
     uniqueOpponentsList: ReadonlyArray<string>;
     lastActivity: string;
 }
 
+// Method to sort the data in a descending order
+const sortUserList = (userList: ReadonlyArray<IUserActivity>): ReadonlyArray<IUserActivity> =>
+    [...userList].sort((a: IUserActivity, b: IUserActivity) =>
+        sortDatesDescCompare(a.userLastActivity, b.userLastActivity))
+
+// This method get the times user won a game
 const calculateWinnerRatio = (ratio: number, fullName: string, game: IGame): number =>
     ratio + (game.winnerName === fullName ? 1 : 0)
 
+
+// This method calculate all the unique opponents that had an user
 const calculateUniqueOpponents = (uniqueOpponentsList: ReadonlyArray<string>, game: IGame): ReadonlyArray<string> =>
     Array.from(new Set([ ...uniqueOpponentsList, ...game.otherPlayers]))
 
-const parseDateToString = (date: Date, pattern: string) =>
-    format(date, pattern)
 
+// This method calculate the last Game of the user
 const calculateLastActivity = (lastActivity: string, game: IGame) => {
 
     // initial date
-    let lastActivityDate: Date = parse(lastActivity, "yyyy-MM-dd", new Date());
-    let gameDate: Date = parse(game.date, "yyyy-MM-dd", new Date());
+    let lastActivityDate: Date = stringToDate(lastActivity, "yyyy-MM-dd");
+    let gameDate: Date =
+        stringToDate(
+            jsonKeyExists(game, 'accurateDate') ?       game.accurateDate.date
+            : /* Otherwise */                           game.date, "yyyy-MM-dd"
+        );
 
     return lastActivityDate > gameDate ?
         parseDateToString(lastActivityDate, "yyyy-MM-dd") : parseDateToString(gameDate, "yyyy-MM-dd")
 }
 
+// We map data from fake hook and transform it to the format of the exercise
 const dataFromUserList = (fullName: string, games: ReadonlyArray<IGame>): IDataFromUserListResponse =>
     games.reduce((response: IDataFromUserListResponse, game: IGame) => ({
         ratio: calculateWinnerRatio(response.ratio, fullName, game),
@@ -69,6 +81,7 @@ const dataFromUserList = (fullName: string, games: ReadonlyArray<IGame>): IDataF
         lastActivity: '1990-01-01'
     })
 
+// We get all the variables that we need to form the new objects
 const userListDataEnrichment = (userList: ReadonlyArray<IUserList>): ReadonlyArray<IUserActivity> =>
     !userList ? []
         : userList.map((userData: IUserList) => {
@@ -84,21 +97,11 @@ const userListDataEnrichment = (userList: ReadonlyArray<IUserList>): ReadonlyArr
             }
         })
 
-const sortUserList = (userList: ReadonlyArray<IUserActivity>): ReadonlyArray<IUserActivity> =>
-    [...userList].sort(function compare(a: IUserActivity, b: IUserActivity) {
 
-        let dateA: Date = parse(a.userLastActivity, "yyyy-MM-dd", new Date());
-        let dateB: Date = parse(b.userLastActivity, "yyyy-MM-dd", new Date());        
 
-        if (dateA < dateB) {
-        return 1;
-        }
-        if (dateA > dateB) {
-        return -1;
-        }
-        // a debe ser igual b
-        return 0;
-    })
+const i18n = {
+    header: 'Recent Activity'
+}
 
 const RecentActivity: React.FC<IRecentActivity> = ({ loading, userList }) => {
 
