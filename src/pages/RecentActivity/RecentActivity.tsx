@@ -28,15 +28,16 @@ interface IUserList {
     membershipDate?: string
 }
 
-interface IRecentActivity {
-    loading: boolean
-    userList: ReadonlyArray<IUserList>
-}
-
 interface IDataFromUserListResponse {
     ratio: number;
     uniqueOpponentsList: ReadonlyArray<string>;
     lastActivity: string;
+}
+
+interface IRecentActivity {
+    loading: boolean
+    userList: ReadonlyArray<IUserList>
+    error?: string
 }
 
 // Method to sort the data in a descending order
@@ -103,7 +104,7 @@ const i18n = {
     header: 'Recent Activity'
 }
 
-const RecentActivity: React.FC<IRecentActivity> = ({ loading, userList }) => {
+const RecentActivity: React.FC<IRecentActivity> = ({ loading, userList, error }) => {
 
     const dispatch = useDispatch()
 
@@ -120,7 +121,9 @@ const RecentActivity: React.FC<IRecentActivity> = ({ loading, userList }) => {
             <Spacing variant={'cg-header-spacing'} />
             <SearchInput searchInputHandler={searchInputHandler} />
             <Spacing variant={'cg-search-input-spacing'} />
-            <ActivityList userActivityList={sortedData} loading={loading} />
+            <ActivityList userActivityList={sortedData}
+                loading={loading}
+                error={error ? error : null} />
         </div>
 
     </Layout>

@@ -9,11 +9,14 @@ function App() {
   const searchInput = useSelector((state: RootState) => state.recentActivity.searchInput)
 
   const { data, error, loading } = useFakeQuery('SelectCatPlayers', {
-    variables: { search: searchInput },
+    variables: { search: searchInput }, forceError: true
   });
 
   return (
-    <RecentActivity userList={data} loading={loading} />
+    <RecentActivity
+      userList={data}
+      loading={error ? false : loading}
+      error={error ? error.message: null} />
   );
 }
 

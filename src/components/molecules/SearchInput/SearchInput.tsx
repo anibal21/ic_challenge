@@ -9,7 +9,7 @@ const i18n = {
     placeholder: 'Search By Name'
 }
 
-const timeUntilRequest = 400;
+const timeUntilRequest = process.env.REACT_APP_SEARCH_INPUT_RESPONSE_TIME;
 
 const SearchInput: React.FC<ISearchInput> = ({ searchInputHandler }) => {
 
@@ -17,6 +17,7 @@ const SearchInput: React.FC<ISearchInput> = ({ searchInputHandler }) => {
         searchInputHandler(event.target.value);
 
     const inputTimeHandler =
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         useCallback(debounce(changeHandler, timeUntilRequest), []);
 
     return <input

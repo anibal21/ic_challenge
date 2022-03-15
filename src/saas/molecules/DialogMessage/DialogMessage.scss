@@ -1,0 +1,25 @@
+.cg-dialog-container {
+  width: $cg-layout-common-full-width;
+  height: 40px;
+  border-radius: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cg-severity-color-error {
+  background-color: $cg-dialog-message-severity-error;
+}
+
+.cg-severity-color-warning {
+  background-color: $cg-dialog-message-severity-warning;
+}
+
+.cg-severity-color-success {
+  background-color: $cg-dialog-message-severity-success;
+}
+
+.cg-severity-color-info {
+  background-color: $cg-dialog-message-severity-info;
+}

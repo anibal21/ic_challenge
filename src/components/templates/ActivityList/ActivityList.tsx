@@ -1,5 +1,7 @@
 import React from 'react'
+import { SeverityStyle } from '../../../utils/enums/SeverityStyle'
 import { ClassificationByRatio } from '../../../utils/match/ClassificationByRatio'
+import DialogMessage from '../../molecules/DialogMessage/DialogMessage'
 import Card from '../../organisms/Card/Card'
 
 export interface IUserActivity {
@@ -13,12 +15,15 @@ export interface IUserActivity {
 interface IActivityList {
     userActivityList: ReadonlyArray<IUserActivity>
     loading: boolean
+    error?: string
 }
 
-const ActivityList: React.FC<IActivityList> = ({ userActivityList, loading }) =>
-    <div role={'activityList'} className='cg-activity-list-container'>
+const ActivityList: React.FC<IActivityList> = ({ userActivityList, loading, error }) =>
+    // eslint-disable-next-line jsx-a11y/aria-role
+    <div role="activityList" className='cg-activity-list-container'>
         {loading ?
-            'Loading...'
+            <DialogMessage text={'Loading...'} severity={SeverityStyle.INFO}/>
+            : error ? <DialogMessage text={error} severity={SeverityStyle.ERROR}/>
             : userActivityList.map((userActivity: IUserActivity, index: number) =>
                 <Card
                     key={index}

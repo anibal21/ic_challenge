@@ -4,7 +4,7 @@ interface ILayout {
     children: JSX.Element
 }
 
-const Layout = ({ children }) => <div className={'cg-layout-container'} >
+const Layout: React.FC<ILayout> = ({ children }) => <div className={'cg-layout-container'} >
     {children}
 </div>
 
