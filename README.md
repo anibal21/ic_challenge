@@ -3,10 +3,6 @@
 - Install current packages
 - Feel free to install and use any library you would like
 
-# Submission
-
-When you are done, create a zip file from the repo and name it `{user-github-handle}/{yyyy-MM-DD}` and send it back to us.
-
 # Test description
 
 Display sorted player information as given in the design.
@@ -49,19 +45,3 @@ useFakeQuery('SelectPlayers', { variables: { search: null } });
 //Fetching list with search
 useFakeQuery('SelectPlayers', { variables: { search: 'some-search input 123' } });
 ```
-
-# Job Applicant Notes - Aníbal Rodríguez
-
-First of all, this is one of the best take home tests I've done. It looks simple, but all you can put and improve is important. There're things that I couldn't do because of time, but the project have almost all the things I always use. The things I could finish with more time are:
-
-1- Add all the atoms, molecules, etc to Storybook with good descriptions and a more interactive playground.
-
-2- Test all the features that the project had, like 400 ms response, screen responsiveness, etc.
-
-3- I would implement I18n.
-
-4- I would build more utilities methods to make my components more pure, stateless, small and more readable.
-
-5- I would implement environment variables for miliseconds response.
-
-6- I would implement redux-persist to continue working if page refresh.
